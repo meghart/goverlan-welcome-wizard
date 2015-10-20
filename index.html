@@ -1,0 +1,766 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Goverlan Welcome Wizard</title>
+  <!-- Stylesheet -->
+  <link rel="stylesheet" type="text/css" href="wizard.css" />
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="fonts/fonts.css" />
+</head>
+
+<body onload="startSlide()">
+
+  <!-- This is the container that holds the slide content and the Welcome slide -->
+  <div class="container">
+
+    <!-- Slide 0 - Welcome -->
+    <div id="0">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="content animated">
+        <h2>It looks like this is the first time Goverlan is being used at your site.</h2>
+        <h3 class="margin-top-25">Let's go through some basic info and configurations so that you can enjoy the full potential of Goverlan.</h3>
+          <a data-href="1" class="go-btn" onclick="slideSwitch(this)">
+            <span>Let's Start!</span>
+            <br />
+            <img src="images/start-btn.png" alt="Let's Start!" width="60" height="60" />
+          </a>
+          <div class="intro">
+            <a id="action_Remind_Later" class="emphasis">Remind me later.</a>
+            <a id="action_Never_Remind" class="emphasis">I don't need help.</a>
+          </div>
+      </div>
+    </div>
+    <!-- End Slide 0 -->
+
+    <!-- Slide 1 - Team Collaboration Introduction -->
+    <div id="1" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="0" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 01
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Team Collaboration</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p class="size24">Goverlan can share information within a team so that it is not duplicated. It also includes great team collaboration features.</p>
+        <p class="size24">Will you be using Goverlan within a team?</p>
+        <a data-href="2" onclick="slideSwitch(this)" class="outline-btn margin-top-75">
+            Yes, we are a team
+          </a>
+        <br />
+        <a data-href="6" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+            No, I work alone
+          </a>
+      </div>
+    </div>
+    <!-- End Slide 1 -->
+
+    <!-- Slide 2 - Team Collaboration Select Configuration -->
+    <div id="2" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="1" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 01
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Team Collaboration</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>To activate team collaboration, you need to configure a common database back end with your teammates. Database configurations can be published to your team in multiple ways depending on your needs.</p>
+        <p>In large environments, a GPO or a Goverlan Central Server is appropriate. However you can also push these settings manually for a simpler deployment.</p>
+        <a data-href="3" onclick="slideSwitch(this)" class="outline-btn margin-top-25">
+          Use a GPO
+        </a>
+        <br />
+        <a data-href="4" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          Use Goverlan Central Server
+        </a>
+        <br />
+        <a data-href="5" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          Manually Configure
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 2 -->
+
+    <!-- Slide 3 - Team Collaboration GPO -->
+    <div id="3" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="2" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 01
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Team Collaboration</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Ok, let’s use a GPO to configure Goverlan!</p>
+        <p>You will find a Goverlan Group Policy Admin Template in this directory. This GPO templates can be used to configure the behavior and settings of Goverlan both on the operator and client sides.</p>
+        <p>Publish this GPO Admin Template to your Active Directory, then use the Group Policy Management snap-in to configure Goverlan’s database back-end across your network.</p>
+        <a href="http://www.goverlan.com/go.cgi?to=inprog-userguide-gpo" target="_blank" class="outline-btn margin-top-50">
+          See the user guide for GPO
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 3 -->
+
+    <!-- Slide 4 - Team Collaboration GCS -->
+    <div id="4" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="2" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 01
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Team Collaboration</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Ok, let’s use the Goverlan Central Server to configure Goverlan!</p>
+        <p>The Goverlan Central Server (GCS) is used when secure and instantaneous configuration is needed. It is also used to enable centralized auditing of Goverlan events.</p>
+        <p style="left-align">
+          <!-- update link -->
+          1. <a href="" class="emphasis" target="_blank">Download</a> and install the GCS on a Windows Server
+        <br />
+          2. Configure the settings &amp; auditing you need
+        <br />
+          3. Publish the GCS to your infrastructure via DNS or GPO
+        </p>
+        <a class="outline-btn margin-top-50" href="http://www.goverlan.com/go.cgi?to=Goverlan-Central-Server" target="_blank">
+          See the user guide for GCS
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 4 -->
+
+    <!-- Slide 5 - Team Collaboration Manual Configuration -->
+    <div id="5" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="2" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 01
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Team Collaboration</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Ok, let’s configure this manually.</p>
+        <p>For small teams and SMB infrastructure, you can use a file based database back end. For larger implementation you can use a MS SQL Server back end.</p>
+        <p>
+          For today, let’s start with the file-based database to get you going. If performance is lacking, you can always access database configuration via the Goverlan Settings button and switch to a MSSQL database.
+        </p>
+        <p>
+          Create a network share that is accessible and modifiable by your team, then enter its UNC path below:
+        </p>
+        <form id="form_TeamSharingDir">
+          <!-- capture input -->
+          <input type="text" maxlength="300" id="textInput_TeamSharingDir" placeholder="\\MYSERVER\GovTeamData" />
+          <input type="submit" id="action_Apply_TeamShareDir" class="outline-btn" name="submit" value="Next&nbsp;&rarr;" />
+        </form>
+      </div>
+    </div>
+    <!-- End Slide 5 -->
+
+    <!-- Slide 6 - Detecting Users' Machines -->
+    <div id="6" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="1" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Goverlan can detect your user’s logged-in workstations, a great feature that allows you to focus on your users and quickly access their machines.</p>
+        <p>This feature may require some additional configuration before working. We can check this right now!</p>
+        <a data-href="7" onclick="slideSwitch(this)" class="outline-btn margin-top-75">
+          Yes, tell me more
+        </a>
+        <br />
+        <a data-href="16" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          Not interested, skip
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 6 -->
+
+    <!-- Slide 7 - Detecting Machines Roaming Profile -->
+    <div id="7" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="6" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Goverlan needs a place where to store user information. By default it uses the user’s roaming profile location.</p>
+        <p>Are users in your Active Directory configured with a roaming profile?</p>
+        <a data-href="13" onclick="slideSwitch(this)" class="outline-btn margin-top-75">
+          Yes, all of them
+        </a>
+        <br />
+        <a data-href="8" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          No, or not all of them
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 7 -->
+
+    <!-- Slide 8 - Detecting Machines GCDR -->
+    <div id="8" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="7" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Then we need a Goverlan Central Data Repository (GCDR) before this feature can work!.  A GCDR is a simple network share that is accessible from your client machines, and modifiable by Domain Users.  Don’t worry, only lightweight and non-confidential data will be stored there!</p>
+        <p>If this is the first time that a GCDR is being configured, then create a network share on a server, allow read/write access to Domain Users and enter the network share location here:</p>
+        
+        <form class="margin-top-75" id="form_GCDR">
+          <!-- capture input -->
+          <input type="text" maxlength="300" id="textInput_GCDR" placeholder="\\MYSERVER\GovTeamData" />
+          <input type="submit" id="action_Apply_GCDR" class="outline-btn" name="submit" value="Next&nbsp;&rarr;" />
+        </form>
+      </div>
+    </div>
+    <!-- End Slide 8 -->
+
+    <!-- Slide 9 - Detecting Machines Select Configuration -->
+    <div id="9" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="8" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Now that the GCDR exists, we need to publish its existence to all of your client machines. This can be done in multiple ways depending on your needs.</p>
+        <p>On large environment, a GPO or a Goverlan Central Server is appropriate. However you can also push these settings manually for a simpler deployement.</p>
+        <a data-href="10" onclick="slideSwitch(this)" class="outline-btn margin-top-25">
+          Use a GPO
+        </a>
+        <br />
+        <a data-href="11" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          Use Goverlan Central Server
+        </a>
+        <br />
+        <a data-href="12" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          Manually Configure
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 9 -->
+
+    <!-- Slide 10 - Detecting Machines GPO  -->
+    <div id="10" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="9" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Ok, let’s use a GPO to configure Goverlan!</p>
+        <p>You will find a Goverlan Group Policy Admin Template in this directory. This GPO templates can be used to configure the behavior and settings of Goverlan both on the operator and client sides.</p>
+        <p>Publish this GPO Admin Template to your Active Directory, then use the Group Policy Management snap-in to configure Goverlan’s database back-end across your network.</p>
+        <a href="http://www.goverlan.com/go.cgi?to=inprog-userguide-gpo" target="_blank" class="outline-btn margin-top-50">
+          See the user guide for GPO
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 10 -->
+
+    <!-- Slide 11 - Detecting Machines GCS  -->
+    <div id="11" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="9" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Ok, let’s use the Goverlan Central Server to configure Goverlan!</p>
+        <p>The Goverlan Central Server (GCS) is used when secure and instantaneous configuration is needed. It is also used to enable centralized auditing of Goverlan events.</p>
+        <p style="left-align">
+          <!-- update link -->
+          1. <a href="" class="emphasis" target="_blank">Download</a> and install the GCS on a Windows Server
+        <br />
+          2. Configure the settings &amp; auditing you need
+        <br />
+          3. Publish the GCS to your infrastructure via DNS or GPO
+        </p>
+        <a class="outline-btn margin-top-50" href="http://www.goverlan.com/go.cgi?to=Goverlan-Central-Server" target="_blank">
+          See the user guide for GCS
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 11 -->
+
+    <!-- Slide 12 - Detecting Machines Gov Agent Manager  -->
+    <div id="12" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="9" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>To manually publish the GCDR to your client machines, you can use the Goverlan Agent Manager. This utility allows you to push client side configuration on remote machines.</p>
+        <!-- update link -->
+        <a href="" target="_blank" class="outline-btn margin-top-75">
+          Goverlan Agent Manager
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 12 -->
+
+    <!-- Slide 13 - Detecting Machines Read Access  -->
+    <div id="13" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="7" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>That’s good! Simply confirm that all Goverlan operators have Read access to the user’s profile directories, otherwise this no longer helps.</p>
+        <a data-href="14" onclick="slideSwitch(this)" class="outline-btn margin-top-75">
+          Next&nbsp;&rarr;
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 13 -->
+
+    <!-- Slide 14 - Detecting Machines Deploy Agents  -->
+    <div id="14" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="13" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Almost there! The last requirement is that the Goverlan Agents must be deployed onto your machines.</p>
+        <p>
+          This is done automatically by Goverlan as you perform services on your machines, so over time you will be able to detect user’s machine. However we can pre-deploy these agents on some machines now so that you can test this feature.
+        </p>
+        <a data-href="15" onclick="slideSwitch(this)" class="outline-btn margin-top-50">
+          Let's deploy some agents
+        </a>
+        <br />
+        <a data-href="16" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          I don't want to do this now
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 14 -->
+
+    <!-- Slide 15 - Detecting Machines Gov Agent Manager  -->
+    <div id="15" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="14" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 02
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Detecting User's Machines</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>
+          Use the Goverlan Agent Manager to manually deploy Goveraln Agents onto your machines. This utility also allows you to push client side configuration on remote machines.
+        </p>
+        <!-- update link -->
+        <a href="" target="_blank" class="outline-btn margin-top-75">
+          Goverlan Agent Manager
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 15 -->
+
+    <!-- Slide 16 - Remote Control Behavior  -->
+    <div id="16" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="6" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 03
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Remote Control Behavior</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>
+          With Goverlan you can fully configure the way Remote Control sessions are handled. You can prompt the local user for approval, configure auditing and notifications and even brand the client side user interface with your text and logos.
+        </p>
+        <a data-href="17" onclick="slideSwitch(this)" class="outline-btn margin-top-50">
+          Yes, tell me more
+        </a>
+        <br />
+        <a data-href="21" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          No, not interested
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 16 -->
+
+    <!-- Slide 17 - Remote Control Behavior Configuration Settings -->
+    <div id="17" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="16" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 03
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Remote Control Behavior</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Client side settings can be configured in multiple ways.</p>
+        <p>
+          On large environment, a GPO or a Goverlan Central Server is appropriate. However you can also push these settings manually for a simpler deployement.
+        </p>
+        <a data-href="18" onclick="slideSwitch(this)" class="outline-btn margin-top-25">
+          Use a GPO
+        </a>
+        <br />
+        <a data-href="19" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          Use Goverlan Central Server
+        </a>
+        <br />
+        <a data-href="20" onclick="slideSwitch(this)" class="outline-btn margin-top-10">
+          Manually Configure
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 17 -->
+
+    <!-- Slide 18 - Remote Control Behavior GPO -->
+    <div id="18" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="17" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 03
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Remote Control Behavior</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Ok, let’s use a GPO to configure Goverlan!</p>
+        <p>You will find a Goverlan Group Policy Admin Template in this directory. This GPO templates can be used to configure the behavior and settings of Goverlan both on the operator and client sides.</p>
+        <p>Publish this GPO Admin Template to your Active Directory, then use the Group Policy Management snap-in to configure Goverlan’s database back-end across your network.</p>
+        <a href="http://www.goverlan.com/go.cgi?to=inprog-userguide-gpo" target="_blank" class="outline-btn margin-top-50">
+          See the user guide for GPO
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 18 -->
+
+    <!-- Slide 19 - Remote Control Behavior GCS -->
+    <div id="19" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="17" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 03
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Remote Control Behavior</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>Ok, let’s use the Goverlan Central Server to configure Goverlan!</p>
+        <p>The Goverlan Central Server (GCS) is used when secure and instantaneous configuration is needed. It is also used to enable centralized auditing of Goverlan events.</p>
+        <p style="left-align">
+          <!-- update link -->
+          1. <a href="" class="emphasis" target="_blank">Download</a> and install the GCS on a Windows Server
+        <br />
+          2. Configure the settings &amp; auditing you need
+        <br />
+          3. Publish the GCS to your infrastructure via DNS or GPO
+        </p>
+        <a class="outline-btn margin-top-50" href="http://www.goverlan.com/go.cgi?to=Goverlan-Central-Server" target="_blank">
+          See the user guide for GCS
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 19 -->
+
+    <!-- Slide 20 - Remote Control Behavior Gov Agent Manager -->
+    <div id="20" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="title">
+        <div class="control">
+          <img class="prev" data-href="17" onclick="prevSlide(this)" src="images/previous.png" alt="Previous" width="32" height="32" />
+          <p>Step 03
+            <span>/03</span>
+          </p>
+          <img class="next" onclick="nextslide(this)" src="images/next.png" alt="Next" width="32" height="32" />
+        </div>
+        <h2 class="slide-title">Remote Control Behavior</h2>
+      </div>
+      <div class="content animated margin-top-50">
+        <p>To manually publish client side behavior to your client machines, you can use the Goverlan Agent Manager.</p>
+        <!-- update link -->
+        <a href="" target="_blank" class="outline-btn margin-top-75">
+          Goverlan Agent Manager
+        </a>
+      </div>
+    </div>
+    <!-- End Slide 20 -->
+
+    <!-- Slide 21 - Final Slide -->
+    <div id="21" class="hide">
+      <div class="header">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="30" height="30" />
+        <span>Welcome to Goverlan</span>
+        <input type="image" id="button_cancel" src="images/close-btn.png" alt="Close this wizard" width="17" height="16" />
+      </div>
+      <div class="content animated margin-top-50">
+        <img src="images/symbol.png" alt="Goverlan Icon" width="61" height="60" />
+        <h1 class="margin-top-25">That's it. You're ready to use Goverlan.</h1>
+        <h3 class="margin-top-75">Tip: You can always access this wizard from the help menu</h3>
+      </div>
+    </div>
+    <!-- End Slide 21 -->
+
+  </div>
+  <!-- End Container -->
+
+</body>
+
+<script type="text/javascript">
+
+function getParam(parameter) {
+  var params = window.location.search.substr(1).split('&');
+  for( var i= 0; i < params.length; i++ ) {
+    var p = params[i].split("=");
+    if( p[0] == parameter ) {
+      return decodeURIComponent(p[1]);
+    }
+  }
+  return false;
+}
+
+function startSlide() {
+  var start = getParam("slide");
+  if(start !== false && start !== "") {
+    // Hide welcome slide
+    document.getElementById("0").classList.add("hide");
+    // Show target slide
+    document.getElementById(start).classList.remove("hide");
+  }
+}
+
+function crossfade(x,y) {
+  var this_content = document.getElementById(x).getElementsByClassName("content")[0];
+  var target_content = document.getElementById(y).getElementsByClassName("content")[0];
+
+  if(this_content.classList.contains("fadeIn")) {
+    this_content.classList.remove("fadeIn");
+  }
+  if(this_content.classList.contains("fadeOut")) {
+    this_content.classList.remove("fadeOut");
+  }
+  if(target_content.classList.contains("fadeIn")) {
+    target_content.classList.remove("fadeIn");
+  }
+  if(target_content.classList.contains("fadeOut")) {
+    target_content.classList.remove("fadeOut");
+  }
+  this_content.classList.add("fadeOut");
+  document.getElementById(x).classList.add("hide");
+  document.getElementById(y).classList.remove("hide");
+  target_content.classList.add("fadeIn");
+}
+
+
+function prevSlide(e) {
+  var id = e.getAttribute("data-href");
+  var prev_slide = parseInt(id, 10);
+  var current_slide = e.parentNode.parentNode.parentNode.getAttribute("id");
+  crossfade(current_slide,prev_slide);
+}
+
+function nextslide(e) {
+  var current_slide = e.parentNode.parentNode.parentNode.getAttribute("id");
+  if( parseInt(current_slide, 10) === 0 ) {
+    var next_slide = 1;
+  } else if( parseInt(current_slide, 10) > 0 && parseInt(current_slide, 10) < 6 ) {
+    var next_slide = 6;
+  } else if( parseInt(current_slide, 10) > 5 && parseInt(current_slide, 10) < 16 ) {
+    var next_slide = 16;
+  } else if( parseInt(current_slide, 10) > 15 && parseInt(current_slide, 10) < 21 ) {
+    var next_slide = 21;
+  } else {
+    var next_slide = 0;
+  }
+  crossfade(current_slide,next_slide);
+}
+
+function slideSwitch(e) {
+  var id = e.getAttribute("data-href");
+  var to_slide = parseInt(id, 10);
+  var current_slide = e.parentNode.parentNode.getAttribute("id");
+  crossfade(current_slide,to_slide);
+}
+
+</script>
+
+</html>
